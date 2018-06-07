@@ -49,7 +49,7 @@ def check(row,col):
     blockCheck(row, col)	
 	
 
-
+lengthy = 0
 while (i_main < 9):
     j_main = 0
     while(j_main < 9):
@@ -58,17 +58,17 @@ while (i_main < 9):
         check(i_main,j_main)
         print arr
 
-        if (len(arr) == 0):
-            table[i_main][j_main] = 0
-            table[i_main][j_main-1] = 0
-            table[i_main][j_main-2] = 0
-            j_main -= 3
-
-        else:
+        if (arr != []):
             table[i_main][j_main] = random.choice(arr)
+
+        else :
+            for j in range(j_main):
+                table[i_main][j] = 0;
+            j_main = -1;
         
         printTable()
         print('\n')
+        lengthy = len(arr)
 
         j_main += 1
 
